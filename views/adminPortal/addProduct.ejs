@@ -1,0 +1,167 @@
+<% layout('layouts/boilerplate') %> 
+<section class="container">
+    <div class="row mt-5 mb-5">
+        <div class="col-md-6 offset-md-3">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title text-center text-danger h4 fw-bold">Add New Product</h5>
+                    <form action="/admin/add-product" method="POST" class="validated-form" novalidate enctype="multipart/form-data">
+                        <div class="mb-2">
+                            <label for="name" class="form-label">Product Name</label>
+                            <input type="text" class="form-control" name="product[name]" id="name" required
+                                placeholder="Black Forest ..." autofocus>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            Product Category
+                            <div class="form-check">
+                                <input class="form-check-input" name="product[category]" type="checkbox" value="Birthday Cake" id="birthday"
+                                    checked>
+                                <label class="form-check-label" for="birthday">
+                                    Birthday Cake
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" name="product[category]" type="checkbox" value="Anniversary Cake" id="anniversary">
+                                <label class="form-check-label" for="anniversary">
+                                    Anniversary Cake
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" name="product[category]" type="checkbox" value="Designer Cake" id="designer">
+                                <label class="form-check-label" for="designer">
+                                    Designer Cake
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" name="product[category]" type="checkbox" value="Photo Cake" id="photo">
+                                <label class="form-check-label" for="photo">
+                                    Photo Cake
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" name="product[category]" type="checkbox" value="Popular Cake" id="popular">
+                                <label class="form-check-label" for="popular">
+                                    Popular Cake
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" name="product[category]" type="checkbox" value="Special Cake" id="special">
+                                <label class="form-check-label" for="special">
+                                    Special Cake
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <!-- <label for="img-link" class="form-label">Image Link</label>
+                            <input type="url" class="form-control" name="product[imgLink]" id="img-link" required placeholder="https://xyz.com/xyz.jpg">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div> -->
+                            <label for="image" class="form-label">Add your image files here...</label>
+                            <input class="form-control" type="file" id="image" name="image" multiple>
+                        </div>
+                        <div class="mb-2">
+                            <label for="normal-price" class="form-label">Normal Price</label>
+                            <input type="number" class="form-control" name="product[price]" id="normal-price" required placeholder="999">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="sale-price" class="form-label">Sale Price</label>
+                            <input type="number" class="form-control" name="product[salePrice]" id="sale-price"
+                                required placeholder="899">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="availability" class="form-label">Availability</label>
+                            <select class="form-select form-control" name="product[availability]" aria-label="Default select" id="availability">
+                                <option value="In Stock" selected>In Stock</option>
+                                <option value="Out of Stock">Out of Stock</option>
+                            </select>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="weight" class="form-label">Weight (in kg)</label>
+                            <select class="form-select form-control" name="product[weight]" aria-label="Default select" id="weight">
+                                <!-- <option value="" selected>Select Weigth</option> -->
+                                <option value="0.5" selected>0.5 kg</option>
+                                <option value="1">1.0 kg</option>
+                                <option value="1.5">1.5 kg</option>
+                                <option value="2">2.0 kg</option>
+                                <option value="2.5">2.5 kg</option>
+                                <option value="3">3.0 kg</option>
+                                <option value="3.5">3.5 kg</option>
+                                <option value="4">4.0 kg</option>
+                                <option value="4.5">4.5 kg</option>
+                                <option value="5">5.0 kg</option>
+                            </select>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="shape" class="form-label">Shape</label>
+                            <select class="form-select form-control" name="product[shape]" aria-label="Default select" id="shape">
+                                <!-- <option value="" selected>Select Shape</option> -->
+                                <option value="Circle" selected>Circle</option>
+                                <option value="Heart">Heart</option>
+                                <option value="Oval">Oval</option>
+                                <option value="Square">Square</option>
+                            </select>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="flavour" class="form-label">Flavour</label>
+                            <select class="form-select form-control" name="product[flavour]" aria-label="Default select" id="flavour">
+                                <option value="" selected>Select Flavour</option>
+                                <option value="Chocolate" >Chocolate</option>
+                                <option value="Fruit">Fruit</option>
+                                <option value="Exotic">Exotic</option>
+                                <option value="Black Forest">Black Forest</option>
+                                <option value="Butter Scotch">Butter Scotch</option>
+                                <option value="Vanilla">Vanilla</option>
+                                <option value="Coffee">Coffee</option>
+                                <option value="Strawberry">Strawberry</option>
+                            </select>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="tier" class="form-label">Tier</label>
+                            <select class="form-select form-control" name="product[tier]" aria-label="Default select" id="tier">
+                                <option value="Single" selected>Single</option>
+                                <option value="Double">Double</option>
+                                <option value="Triple">Triple</option>
+                                <option value="Four">Four</option>
+                            </select>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="description" class="form-label">Product Description</label>
+                            <textarea class="form-control" name="product[description]" id="description" rows="8" placeholder="Product Description Goes Here ..." required></textarea>
+                            <div class="valid-feedback">
+                                Looks good
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-primary">Add Product</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

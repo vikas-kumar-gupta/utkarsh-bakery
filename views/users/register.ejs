@@ -1,0 +1,92 @@
+<% layout('layouts/boilerplate') %>
+<section class="container">
+    <div class="row mt-5 mb-5">
+        <div class="col-md-6 offset-md-3">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title text-center text-danger h4 fw-bold">Register New Account</h5>
+                    <form action="/register" method="POST" class="validated-form" novalidate>
+                        <div class="mb-2">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" name="registerUser[username]" id="username" required
+                                placeholder="username" autofocus>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <!-- <div class="mb-2">
+                            <label for="full-name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" name="registerUser[fullName]" id="full-name" required
+                                placeholder="Full Name" autofocus>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div> -->
+                        <div class="mb-2">
+                            <label for="first-name" class="form-label">First Name</label>
+                            <input type="text" class="form-control" name="registerUser[firstName]" id="first-name" required
+                                placeholder="First Name" autofocus>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="last-name" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" name="registerUser[lastName]" id="last-name" required
+                                placeholder="Last Name" autofocus>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="dob" class="form-label">Date of Birth</label>
+                            <input type="date" class="form-control" name="registerUser[dob]" id="dob">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="number" class="form-label">Mobile Number</label>
+                            <input type="number" class="form-control" name="registerUser[number]" id="number" required
+                                placeholder="Mobile Number">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" name="registerUser[email]" id="email" required
+                                placeholder="Email">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="address" class="form-label">Street Address</label>
+                            <input type="text" class="form-control" name="registerUser[address]" id="address" required
+                                placeholder="Street Address">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" name="registerUser[password]" id="password" required
+                                placeholder="Password">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                            <p class="text-center h6">
+                                <a href="/login">Already have an account, Log in</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    

@@ -1,0 +1,55 @@
+<% layout('layouts/boilerplate') %>
+<section class="container mt-3">
+    <div class="row mt-5 mb-5">
+        <div class="col-md-6 offset-md-3">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title text-center text-danger h4 fw-bold">Price Details</h5>
+                    <div class="p-3">
+                            <table class="table border">
+                                <thead>
+                                    <tr class="table-light">
+                                        <th scope="col">Items</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-muted">
+                                        <tr>
+                                            <td scope="row">
+                                                <%= product.name %>
+                                            </td>
+                                            <td>
+                                                <strong>&#8377; <%= product.salePrice %>.00</strong>
+                                            </td>
+                                        </tr>
+                                            <tr>
+                                                <td>
+                                                    Delivery Charge
+                                                </td>
+                                                <td>
+                                                    &#8377; <%= order.deliveryCharge %>.00
+                                                </td>
+                                            </tr>
+                                            <tr class="text-success">
+                                                <td>
+                                                    <strong>Total Amount</strong>
+                                                </td>
+                                                <td>
+                                                    <strong>&#8377;<%= (product.salePrice) + (order.deliveryCharge) %>.00 </strong>
+                                                </td>
+                                            </tr>
+
+                                </tbody>
+                            </table>
+                    </div>
+                    <form action="/<%= order._id %>/place-order?_method=PUT" method="POST" class="validated-form" novalidate>
+                            <input type="number" name="totalPrice" value="<%= (product.salePrice) + (order.deliveryCharge) %>" class="d-none">
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-success">Confirm Order</button>
+                        </div>
+                    </form>
+                </div>
+            </div>  
+        </div>
+    </div>
+</section>

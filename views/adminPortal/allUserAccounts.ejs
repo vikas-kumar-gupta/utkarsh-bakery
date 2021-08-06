@@ -1,0 +1,68 @@
+<% layout('layouts/boilerplate') %>
+    <section class="container mt-3">
+        <div>
+            <h1 class="text-center text-danger fw-bold p-2">All User Account List</h1>
+            <table class="table table-hover border">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col">No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Mob No.</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Details</th>
+                        
+                    </tr>
+                </thead>
+                <tbody class="text-muted">
+                    <% for(let i=0; i < admins.length; i++) {%>
+                        <tr class="table-danger">
+                            <th scope="row">
+                                <%= (i+1) %>
+                            </th>
+                            <td>
+                                <%= admins[i].firstName %>
+                                    <%= admins[i].lastName %>
+                            </td>
+                            <td><%= admins[i].role %> </td>
+                            <td>
+                                <%= admins[i].number %>
+                            </td>
+                            <td>
+                                <%= admins[i].email %>
+                            </td>
+                            <td class="style=white-space: nowrap; overflow:hidden; text-overflow: ellipsis">
+                                <%= admins[i].address %>
+                            </td>
+
+
+                            <td><a href="/user/<%= admins[i]._id %>/profile" class="btn btn-sm btn-danger">View</a></td>
+                        </tr>
+                        <% } %>
+                    <% for(let i=0; i < customers.length; i++) {%>
+                        <tr class="table-warning">
+                            <th scope="row">  
+                                <%= (i+1) %>
+                            </th>
+                            <td>
+                                <%= customers[i].firstName %> <%= customers[i].lastName %>
+                            </td>
+                            <td><%= customers[i].role %> </td>
+                            <td>
+                                <%= customers[i].number %>
+                            </td>
+                            <td>
+                                <%= customers[i].email %>
+                            </td>
+                            <td class="style=white-space: nowrap; overflow:hidden; text-overflow: ellipsis">
+                                <%= customers[i].address %>
+                            </td>
+
+                            <td><a href="/user/<%= customers[i]._id %>/profile" class="btn btn-sm btn-warning">View</a></td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </div>
+    </section>

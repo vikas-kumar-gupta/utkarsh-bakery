@@ -1,0 +1,64 @@
+<% layout('layouts/boilerplate') %> 
+<section class="container mt-3">
+    <div class="card">
+        <div class="card-header h4 text-danger text-center">
+            Customer Querry
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <td class="fw-bolder">Name</td>
+                                <td><%= querry.name %> </td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bolder">Date</td>
+                                <td>
+                                    <%= querry.date %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bolder">Cantact Number</td>
+                                <td>
+                                    <%= querry.number %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bolder">Email</td>
+                                <td>
+                                    <%= querry.email %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bolder">Address</td>
+                                <td>
+                                    <%= querry.address %>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="card-title text-center"><%= querry.subject %>
+                    </h5>
+                    <p class="card-text text-muted">
+                        <%= querry.body %>
+                    </p>
+                    <div class="row">
+                        <div class="col-6 gap-2 d-grid">
+                            <a href="mailto:<%= querry.email %>" class="btn btn-success">Reply with mail</a>
+                        </div>
+                        <div class="col-6 gap-2 d-grid">
+                            <a href="tel:+<%= querry.number %>" class="btn btn-danger">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted text-center">
+            <%= querry.date %> 
+        </div>
+    </div>
+</section>

@@ -1,0 +1,49 @@
+<% layout('layouts/boilerplate') %>
+    <section class="container mt-3">
+        <div>
+            <h1 class="text-center text-danger fw-bold p-2">Customer Orders</h1>
+            <table class="table table-hover border">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col">No.</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">User Name</th>
+                        <th scope="col">Order Date</th>
+                        <th scope="col">Delivery Date</th>
+                        <th scope="col">Delivery Method</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">View</th>
+                    </tr>
+                </thead>
+                <tbody class="text-muted">
+                    <% orders = orders.reverse() %>
+                        <% for(let i = 0; i < orders.length; i++) {%>
+                            <tr>
+                                <td scope="row">
+                                    <%= (i+1) %>
+                                </td> 
+                                <td>
+                                    <%= orders[i].products[0].name %> 
+                                </td>
+                                <td>
+                                    <%= orders[i].customer.firstName %> <%= orders[i].customer.lastName %> 
+                                </td>
+                                <td>
+                                    <%= orders[i].orderDate %>
+                                </td>
+                                <td>
+                                    <%= orders[i].expectedDeliveryDate %> 
+                                </td>
+                                <td>
+                                    <%= orders[i].deliveryMethod %> 
+                                </td>
+                                <td>
+                                    <%= orders[i].orderStatus  %> 
+                                </td>   
+                                <td><a href="/admin/all-orders/<%= orders[i]._id %>" class="btn btn-sm btn-danger">View</a></td>
+                            </tr>
+                            <% } %>
+                </tbody>
+            </table>
+        </div>
+    </section>

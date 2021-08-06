@@ -1,0 +1,85 @@
+<% layout('layouts/boilerplate') %> 
+<section class="container mt-3">
+    <div class="card">
+        <div class="card-header h4 text-danger text-center">
+            User Profile
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <td class="fw-bolder">Name</td>
+                                <td>
+                                    <%= user.firstName %> <%= user.lastName %> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bolder">Username</td>
+                                <td>
+                                    <%= user.username %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bolder">User Role</td>
+                                <td>
+                                    <%= user.role %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bolder">Join Date</td>
+                                <td>
+                                    <%= user.joinDate %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bolder">Cantact Number</td>
+                                <td>
+                                    <%= user.number %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bolder">Email</td>
+                                <td>
+                                    <%= user.email %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bolder">Date</td>
+                                <td>
+                                    <%= user.dob %>
+                                </td>
+                            </tr>                            
+                            <tr>
+                                <td class="fw-bolder">Address</td>
+                                <td>
+                                    <%= user.address %>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="row">
+                        <% if( currentUser.role === 'admin') { %> 
+                        <div class="col-4 gap-2 d-grid">
+                            <a href="mailto:<%= user.email %>" class="btn btn-success">Mail Now</a>
+                        </div>
+                        <div class="col-4 gap-2 d-grid">
+                            <a href="tel:+<%= user.number %>" class="btn btn-danger">Call Now</a>
+                        </div>
+                        <div class="col-4 gap-2 d-grid">
+                            <a href="/admin/customer/<%= user._id %>/orders" class="btn btn-secondary">Orders</a>
+                        </div>
+                        <% } %> 
+                        
+                    </div>
+                </div>              
+                
+            </div>
+        </div>
+        
+        <div class="card-footer text-muted text-center">
+            <%= user.date %>
+        </div>
+    </div>
+</section>

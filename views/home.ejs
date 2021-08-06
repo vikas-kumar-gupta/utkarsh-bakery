@@ -1,0 +1,48 @@
+<% layout('layouts/boilerplate') %>
+<section>
+    <div id="cake-banner" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/img/cake-img/carousel-01.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/cake-img/carousel-02.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/cake-img/carousel-03.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#cake-banner" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#cake-banner" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+<section class="bg-light">
+    <div class="container">
+        <div class="row mt-3">
+            <% for(product of products.reverse()) { %>
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-6 p-1">
+                    <div class="card shadow">
+                        <img src="<%= product.images[0].url %>" class="card-img-top" alt="">
+
+                        <div class="card-body">
+                            <h6 class="card-title text-center" style="white-space: nowrap; overflow:hidden; text-overflow: ellipsis">
+                                <%= product.name %>
+                            </h6>
+                            <p class="card-text text-center"><strong class="text-primary m-2"><%= product.salePrice %>.00</strong><strong class="text-danger fw-light text-decoration-line-through m-2"><%= product.price %></strong></p>
+                                <div class="gap-2 d-grid">
+                                    <a href="/product/<%= product._id %>" class="btn btn-sm btn-primary">View</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</section>
+

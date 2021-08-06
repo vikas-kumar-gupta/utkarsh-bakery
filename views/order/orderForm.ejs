@@ -1,0 +1,127 @@
+<% layout('layouts/boilerplate') %>
+<section class="container mt-3">
+<div class="row mt-5 mb-5">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="card-title text-center text-danger h4 fw-bold">Order Product</h5>
+                <form action="/<%= product._id %>/place-order" method="POST" class="validated-form" novalidate>
+                    <div class="mb-2">
+                        <label for="shipping-address" class="form-label">Shipping Address (Full Address)</label>
+                        <input type="text" class="form-control" name="placeOrder[shippingAddress]" id="shipping-address" value="<%= currentUser.address %>" required autofocus>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        Delivery Method
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="placeOrder[deliveryMethod]" id="home-delivery" value="Home delivery">
+                            <label class="form-check-label" for="home-delivery" checked>
+                                Home Delivery <strong class="fw-light text-danger">(&#8377; 50.00 Delivery Charge)</strong>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="placeOrder[deliveryMethod]" id="self-picking"
+                                value="Self Picking">
+                            <label class="form-check-label" for="self-picking">
+                                Self Picking
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-2">
+                        Payment method
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="placeOrder[paymentMethod]" id="COD" value="Cash on delivery">
+                            <label class="form-check-label" for="COD" checked>
+                                Cash on delivery
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="placeOrder[paymentMethod]" id="online-payment" value="Online">
+                            <label class="form-check-label" for="online-payment">
+                                Online payment
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <label for="name-on-cake" class="form-label">Name on cake? <strong class="fw-light text-danger">(Leave empty if not required)</strong></label>
+                        <input type="text" class="form-control" name="placeOrder[nameOnCake]" id="name-on-cake">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <label for="dod" class="form-label">Choose Delivery / Recieving Date</label>
+                        <input type="date" class="form-control" name="placeOrder[expectedDeliveryDate]" id="dod">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-success">Proceed Next</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card shadow">
+            <img src="<%= product.imgLink %>" class="card-img-top" alt="">
+            <div class="card-body">
+                        <div class="col-md-12 bg-light p-3">
+                            <div class="fs-6 lh-1 h6">
+                                <table class="table table-borderless table-hover">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-muted">Name</td>
+                                            <td class="text-primary">
+                                                <%= product.name %> kg
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted">Price</td>
+                                            <td class="text-danger">
+                                                <%= product.salePrice %>.00
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted">Weight</td>
+                                            <td>
+                                                <%= product.weight %> kg
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted">Flavour</td>
+                                            <td>
+                                                <%= product.flavour %>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted">Shape</td>
+                                            <td>
+                                                <%= product.shape %>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted">Tier</td>
+                                            <td>
+                                                <%= product.tier %> Tier
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted">Category</td>
+                                            <td>
+                                                <%= product.category %>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>

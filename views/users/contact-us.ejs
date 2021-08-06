@@ -1,0 +1,84 @@
+<% layout('layouts/boilerplate') %>
+<section class="container mt-3">
+    <div class="row">
+        <div class="col-12">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur assumenda distinctio,
+                excepturi veniam impedit reiciendis magnam libero quis, hic repudiandae ipsa. Et eos vel
+                doloremque deleniti excepturi adipisci aut. Officiis.</p>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mt-2">
+            <form action="/contact-us" method="POST" class="validated-form" novalidate>
+                <div class="row">
+                    <div class="col-md-6 mt-2">
+                        <input type="text" class="form-control" name="contactUss[name]" placeholder="Name" required autofocus>
+                        <div class="valid-feedback">
+                            Looks good
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <input type="email" class="form-control" name="contactUss[email]"  placeholder="E-mail" required>
+                        <div class="valid-feedback">
+                            Looks good
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-2">
+                        <input type="number" class="form-control" name="contactUss[number]"  placeholder="Number" required>
+                        <div class="valid-feedback">
+                            Looks good
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <input type="text" class="form-control" name="contactUss[address]"  placeholder="Address" required>
+                        <div class="valid-feedback">
+                            Looks good
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 mt-2">
+                        <input type="text" class="form-control" name="contactUss[subject]"  placeholder="Subject" required>
+                        <div class="valid-feedback">
+                            Looks good
+                        </div>
+                    </div>
+                    <div class="col-lg-12 mt-2">
+                        <textarea class="form-control" name="contactUss[body]" rows="5" placeholder="Your messege here" required></textarea>
+                        <div class="valid-feedback">
+                            Looks good
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="mt-2 d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6 mt-2">  
+            <h5>Call Us / WhatsApp</h5>
+            <p><a href="tel:+919264928257">+(91) 9264928257</i></a></p>
+            <h5>Email / Website</h5>
+            <p><a href="mailto:utkarshbakery@gmail.com">utkarshbakery@gmail.com</a></p>
+            <p><a href="/">utkarshbakery.com</a></p>
+            <h5>Working Hours</h5>
+            <p>Mon - Sun : 08:00 am - 11:00 pm (IST)</p>
+            <h5>Address</h5>
+            <p>Utkarsh Bakery, Beside Adarsh Inter College, Adalhat Mirzapur (231302), Uttar Pradesh, India.
+            </p>           
+        </div>
+    </div>
+</section>
+<section>
+    <div class="mt-2">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d923779.7177101361!2d81.8875822196055!3d25.253271614938093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e37d4ffef8aa7%3A0xd8303bf9422f53a4!2sUtkarsh%20Bakery%20%26%20Ice-cream%20Parlour!5e0!3m2!1sen!2sin!4v1609683241391!5m2!1sen!2sin"
+            width="100%" height="400px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+            tabindex="0"></iframe>
+
+    </div>
+</section>

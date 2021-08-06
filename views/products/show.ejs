@@ -1,0 +1,122 @@
+<% layout('layouts/boilerplate') %> 
+<section class="container mt-2">
+    <div class="row mt-4 p-2">
+        <!-- PRODUCT IMGS -->
+        <div class="col-md-6">
+            <div class="card">
+                <div id="product-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <% product.images.forEach((img, i) => { %>
+                    <div class="carousel-item <%= i === 0 ? 'active': '' %>">
+                    <img src="<%= img.url %>" class="d-block w-100" alt="...">
+                    </div>
+                    <% }) %>
+                </div>
+                <% if(product.images.length > 1) { %>
+                <button class="carousel-control-prev" type="button" data-bs-target="#product-carousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#product-carousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                <% } %>
+                </div>
+            </div>
+        </div>
+        <!-- PRODUCT DETAILS -->
+        <div class="col-md-6">
+            <div class="p-2">
+                <h4>
+                    <%= product.name %>
+                </h4>
+                <div class="badge bg-primary text-wrap d-inline m-1" style="width: 6rem;">
+                    <%= product.flavour %>
+                </div>
+                <div class="badge bg-primary text-wrap d-inline m-1" style="width: 6rem;">
+                    <%= product.tier %> Tier
+                </div>
+                <div class="badge bg-primary text-wrap d-inline m-1" style="width: 6rem;">
+                    <%= product.weight %> kg
+                </div>
+                <div class="badge bg-primary text-wrap d-inline m-1" style="width: 6rem;">
+                    <%= product.shape %>
+                </div>
+
+            </div>
+            <hr>
+            <!-- <div class="badge bg-success text-wrap d-inline m-1" style="width: 6rem;">
+                <i class="fas fa-star"></i>Star Goes Here
+            </div> -->
+            <p class="text-muted mt-2"><%= product.description %>. </p>
+            <p>
+                <strong class="text-primary fs-3 px-3" >&#8377; <%= product.salePrice %>.00</strong>
+                <strong class="text-danger text-decoration-line-through fs-4">&#8377; <%= product.price %></strong>
+            </p>
+            <h5 class="text-success px-3"><strong><%= product.availability %></strong></h5>
+            <div class="row">
+                <!-- This section is for the future refrences -->
+                <!-- <div class="col-md-6">
+                    <form action="">
+                        <div class="d-grid gap-1 mt-2">
+                            <button type="submit" class="btn btn-danger">Add To Cart</button>
+                        </div>
+                    </form>
+                </div> -->
+                <div class="col-md-12">
+                    <form action="/<%= product._id %>/place-order">
+                        <div class="d-grid gap-1 mt-2">
+                            <button type="submit" class="btn btn-primary">Order Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12 bg-light p-3">
+            <h4 class="text-center fw-bolder p-3">Specialization</h4>
+            <div class="fs-6 lh-1">
+                <table class="table table-borderless table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Property</th>
+                            <th scope="col">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-muted">Weight</td>
+                            <td><%= product.weight %> kg</td>
+                        </tr>
+                        <tr>
+                            <td class="text-muted">Flavour</td>
+                            <td><%= product.flavour %></td>
+                        </tr>
+                        <tr>
+                            <td class="text-muted">Shape</td>
+                            <td><%= product.shape %> </td>
+                        </tr>
+                        <tr>
+                            <td class="text-muted">Tier</td>
+                            <td>
+                                <%= product.tier %> Tier
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-muted">Category</td>
+                            <td>
+                                <%= product.category %>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6 p-4">
+            <!-- This section is for the future refrence -->
+        </div>
+    </div>
+</section>
