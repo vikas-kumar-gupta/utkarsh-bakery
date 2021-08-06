@@ -97,22 +97,6 @@ app.use((req, res, next) => {
     next();
 })
 
-const fakeUser = {
-    username: 'avikal',
-    fullName: 'Avikal Gupta',
-    dob: '04/07/1999',
-    number: 9876543210,
-    email: 'avikal@yahoo.com',
-    address: 'Mirzapur, India',
-    role: 'admin'
-}
-
-app.get('/fake-user', async (req, res) => {
-    const user = new User(fakeUser);
-    const newUser = await User.register(user, 'Avikal@123');
-    res.send(newUser)
-})
-
 app.get('/', catchAsync(async (req, res, next) => {
     const products = await Product.find({});
     res.render('home', { products });
