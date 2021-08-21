@@ -26,7 +26,6 @@ const categoryRoutes = require('./routs/category');
 const adminRoutes = require('./routs/admin');
 const orderRoutes = require('./routs/order');
 
-
 const port = process.env.PORT || 3006;
 const secret = process.env.SECRET || 'thisisthesecretkey'
 // const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/utkarsh-bakery';       //  Both production and development
